@@ -16,7 +16,7 @@ public class Main {
 		Prodotto p = new Prodotto(new HashMap<>());  
 		Utente[] utenteLoggato = new Utente[1]; // serve per tenere traccia dell’utente loggato(mi raccomando)
 		ArrayList<Utente> utenti = Utente.creaUtentiDefault();
-
+       
 		Scanner scan = new Scanner(System.in);
 		int menu;
 		System.out.println("Benvenuto!");

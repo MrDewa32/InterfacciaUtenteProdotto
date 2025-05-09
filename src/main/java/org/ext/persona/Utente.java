@@ -6,7 +6,8 @@ import java.util.Map;
 
 public class Utente extends Persona {
 
-	private static int id_utente;
+	private int id_utente;
+	private static int count;
 	private  ArrayList<Integer> ordiniProdotti;
 	private HashMap<String, Integer> carrello = new HashMap<>();
 	
@@ -15,7 +16,7 @@ public class Utente extends Persona {
 	
 	public Utente(String nome, String cognome, String mail, String indirizzo,int id_utente, ArrayList<Integer> ordiniProdotti) {
 		super(nome, cognome, mail, indirizzo);
-		this.id_utente = id_utente++;
+		this.id_utente = count++;
 		
 		//this.ordiniProdotti = new ArrayList<>(ordiniProdotti); 
 		this.ordiniProdotti = (ordiniProdotti != null) ? new ArrayList<>(ordiniProdotti) : new ArrayList<>();
@@ -26,7 +27,7 @@ public class Utente extends Persona {
 
 
 
-	public static int getId_utente() {
+	public  int getId_utente() {
 		return id_utente;
 	}
 
@@ -34,8 +35,8 @@ public class Utente extends Persona {
 
 
 
-	public static void setId_utente(int id_utente) {
-		Utente.id_utente = id_utente;
+	public  void setId_utente(int id_utente) {
+		this.id_utente = id_utente;
 	}
 
 
@@ -61,10 +62,12 @@ public class Utente extends Persona {
 	
 	
 	public static ArrayList<Utente> creaUtentiDefault() {
+		int id_utente = 0;
 	    ArrayList<Utente> utenti = new ArrayList<>();
 	    utenti.add(new Utente("Mario", "Rossi", "mario@email.com", "Via Roma 1", id_utente, null));
 	    utenti.add(new Utente("Laura", "Bianchi", "laura@email.com", "Via Milano 5", id_utente, null));
 	    utenti.add(new Utente("Giulia", "Verdi", "giulia@email.com", "Via Torino 12", id_utente, null));
+	    System.out.println(id_utente);
 	    return utenti;
 	}
 
